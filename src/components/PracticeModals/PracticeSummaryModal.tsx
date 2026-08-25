@@ -173,8 +173,7 @@ export default function PracticeSummaryModal({ isOpen }: Props) {
             further."
             values={{
               charToLearn,
-              hitsRequired: requiredHits - correctTotalCharHits,
-            }}
+                hitsRequired: Math.min(requiredHits - correctTotalCharHits, 200),            }}
           />
         </div>
       )}
