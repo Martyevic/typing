@@ -9,14 +9,14 @@ import 'firebase/messaging';
 // Firebase web config
 // https://firebase.google.com/docs/projects/api-keys
 const config = {
-  apiKey: 'AIzaSyC-qiJJ9Ieefga2yLO4N85YWGROAvp1tnY',
-  authDomain: 'manonet-7f714.firebaseapp.com',
+  apiKey: 'AIzaSyAFOEyDf4_b8OGgBI4FGZZ_bDBn0jYFLHQ',
+  authDomain: 'manonetv2.firebaseapp.com',
   databaseURL: 'https://manonet-7f714.firebaseio.com',
-  projectId: 'manonet-7f714',
-  storageBucket: 'manonet-7f714.appspot.com',
-  messagingSenderId: '146446290915',
-  appId: '1:146446290915:web:64ebb044905d5e98d11ad6',
-  measurementId: 'G-J0XT56TPFZ',
+  projectId: 'manonetv2',
+  storageBucket: 'manonetv2.firebasestorage.app',
+  messagingSenderId: '1076461817961',
+  appId: '1:1076461817961:web:7498a4ca81560bc8aed2f8',
+  measurementId: 'G-8V5E21V4NJ',
 };
 
 let instance: any = null;
