@@ -25,7 +25,6 @@ const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
     const val = e.target.value;
     setInputVal(val);
 
-    // Első leütéskor elindítjuk az időmérőt és az 5 mp-es lassúság-figyelőt
     if (!startTime && val.length > 0) {
       setStartTime(Date.now());
 
@@ -35,7 +34,6 @@ const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
       }, 5000);
     }
 
-    // Ha időben beírja a pontos szöveget
     if (val.trim() === targetText) {
       if (slowTimerRef.current) clearTimeout(slowTimerRef.current);
       validate(val, startTime || Date.now());
@@ -129,8 +127,8 @@ const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
             inset: 0,
             background: 'rgba(0, 0, 0, 0.85)',
             display: 'flex',
-            align-items: 'center',
-            justify-content: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
             zIndex: 9999,
             backdropFilter: 'blur(4px)',
           }}
@@ -233,12 +231,10 @@ const LoginPage = () => {
           </div>
         );
       } else {
-        // HA MÉG NEM MENETELT ÁT A CAPTCHA-N:
         if (!isCaptchaPassed) {
           return <ReverseCaptcha onSuccess={() => setIsCaptchaPassed(true)} />;
         }
 
-        // HA SIKERES A CAPTCHA, MEGJELENNEK A GOMBOK:
         const uiConfig = {
           signInFlow: 'popup',
           signInOptions: [
