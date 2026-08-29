@@ -25,13 +25,14 @@ const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
     const val = e.target.value;
     setInputVal(val);
 
+    // Első leütéskor elindítjuk az időmérőt és a LASSÍTOTT 10 mp-es figyelőt
     if (!startTime && val.length > 0) {
       setStartTime(Date.now());
 
       slowTimerRef.current = setTimeout(() => {
         alert("Jól van menjél, látom neked való ez az oldal 😂\n\nÜdv a ManoNeten!");
         onSuccess();
-      }, 5000);
+      }, 10000); // <-- ITT LETT 10 MÁSODPERC AZ 5-BŐL!
     }
 
     if (val.trim() === targetText) {
