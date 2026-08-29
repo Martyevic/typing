@@ -12,7 +12,7 @@ import {
 } from '@routes';
 import useFirebase from '@utils/useFirebase';
 
-// --- FORDÍTOTT CAPTCHA KOMPONENS ---
+
 const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
   const targetText = 'A gyors barna róka átugorja a lusta kutyát.';
   const [inputVal, setInputVal] = useState('');
@@ -25,14 +25,14 @@ const ReverseCaptcha: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
     const val = e.target.value;
     setInputVal(val);
 
-    // Első leütéskor elindítjuk az időmérőt és a LASSÍTOTT 10 mp-es figyelőt
+    
     if (!startTime && val.length > 0) {
       setStartTime(Date.now());
 
       slowTimerRef.current = setTimeout(() => {
         alert("Jól van menjél, látom neked való ez az oldal 😂\n\nÜdv a ManoNeten!");
         onSuccess();
-      }, 10000); // <-- ITT LETT 10 MÁSODPERC AZ 5-BŐL!
+      }, 20000); // <-- Itt kell növelni az időt te bánat.
     }
 
     if (val.trim() === targetText) {
